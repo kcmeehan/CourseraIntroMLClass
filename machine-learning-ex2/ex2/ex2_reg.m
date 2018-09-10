@@ -38,7 +38,9 @@ ylabel('Microchip Test 2')
 
 % Specified in plot order
 legend('y = 1', 'y = 0')
+axis([-1.0, 1.2, -1.0, 1.2])
 hold off;
+
 
 
 %% =========== Part 1: Regularized Logistic Regression ============

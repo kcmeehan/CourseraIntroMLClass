@@ -17,10 +17,19 @@ grad = zeros(size(theta));
 %               Compute the partial derivatives and set grad to the partial
 %               derivatives of the cost w.r.t. each parameter in theta
 
+% Define the hypothesis
+h = sigmoid(X*theta);
 
+% Create vector from non-one-index values of theta
+n = size(theta);
+theta_j = theta(2:n(1));
 
+% Define cost function
+J = -(y'*log(h) + (1-y)'*log(1-h))./m + lambda*(theta_j'*theta_j)/(2*m); %% Making sure regularization doesn't include theta_1
 
-
+% Define gradient
+grad = (X'*(h-y) + lambda*theta)./m;
+grad(1) = X'(1,:)*(h-y)./m; %% re-defining first entry of grad so regularization doesn't include theta_1
 
 % =============================================================
 
