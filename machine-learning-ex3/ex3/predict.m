@@ -21,13 +21,19 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+% Add ones to the X data matrix
+X = [ones(m, 1) X]; % size: 5000 x 401
 
+% Compute the activation values for the hidden layer
+a1 = sigmoid(X * Theta1'); % size: 5000 x 25
 
+% Compute the activation values for the output layer
+a1 = [ones(m, 1) a1]; % size: 5000 x 26
+a2 = sigmoid(a1 * Theta2'); % size: 5000 x 10
 
-
-
-
-
+% Compute the prediction
+[val, ind] = max(a2');
+p = ind';
 
 % =========================================================================
 
