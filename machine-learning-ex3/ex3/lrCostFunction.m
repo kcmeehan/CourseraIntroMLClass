@@ -19,7 +19,7 @@ theta_temp = theta;
 theta_temp(1) = 0; 
 J = -(y'*log(h) + (1-y)'*log(1-h))./m + lambda*(theta_temp'*theta_temp)/(2*m);
 
-grad = (X'*(h-y) + lambda*theta_temp)./m
+grad = (X'*(h-y) + lambda*theta_temp)./m;
 % Hint: When computing the gradient of the regularized cost function, 
 %       there're many possible vectorized solutions, but one solution
 %       looks like:
