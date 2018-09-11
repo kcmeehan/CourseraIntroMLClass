@@ -1,0 +1,4 @@
+*.pdf
+octave-workspace
+
+lib/
