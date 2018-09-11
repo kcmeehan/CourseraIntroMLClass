@@ -30,8 +30,11 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
-
-
+for i = 1:m
+	probabilities = all_theta * X(i,:)';
+	[val, ind] = max(probabilities);
+	p(i) = ind;
+end
 
 
 
