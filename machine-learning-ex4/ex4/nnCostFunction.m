@@ -52,6 +52,15 @@ for i=1:m
 	J = J -(yvec*log(hvec') + (1-yvec)*log((1-hvec)'))/m;
 end
 
+Theta1_temp = Theta1(:, 2:input_layer_size+1);
+Theta2_temp = Theta2(:, 2:hidden_layer_size+1);
+Theta1_sum = Theta1_temp.^2;
+Theta2_sum = Theta2_temp.^2;
+Theta1_sum = sum(Theta1_sum(:));
+Theta2_sum = sum(Theta2_sum(:));
+
+J = J + lambda/(2*m) * (Theta1_sum + Theta2_sum);
+
 % Part 2: Implement the backpropagation algorithm to compute the gradients
 %         Theta1_grad and Theta2_grad. You should return the partial derivatives of
 %         the cost function with respect to Theta1 and Theta2 in Theta1_grad and
