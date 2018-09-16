@@ -120,8 +120,8 @@ fprintf('Program paused. Press enter to continue.\n');
 pause;
 
 
-%% ================ Part 6: Initializing Pameters ================
-%  In this part of the exercise, you will be starting to implment a two
+%% ================ Part 6: Initializing Parameters ================
+%  In this part of the exercise, you will be starting to implement a two
 %  layer neural network that classifies digits. You will start by
 %  implementing a function to initialize the weights of the neural network
 %  (randInitializeWeights.m)
