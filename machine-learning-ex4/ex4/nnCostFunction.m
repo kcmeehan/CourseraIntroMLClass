@@ -39,7 +39,7 @@ Theta2_grad = zeros(size(Theta2));
 %         cost function computation is correct by verifying the cost
 %         computed in ex4.m
 X  = [ones(m, 1) X]; %% size: 5000 x 401
-Y = zeros(m, 10); %% size: 5000 x 10
+Y = zeros(m, num_labels); %% size: 5000 x 10
 
 %% Forward propagation
 z2 = X * Theta1';
@@ -86,7 +86,7 @@ Delta_2 = zeros(num_labels, hidden_layer_size + 1);
 
 delta_3 = a3 - Y; 
 Delta_2 = delta_3' * a2;
-Theta2_grad = Delta_2./m;
+Theta2_grad = Delta_2./m; %%size: 10 x 26
 
 %% Determining dJ/dTheta(1):
 delta_2 = zeros(m, hidden_layer_size + 1);
@@ -95,8 +95,9 @@ Delta_1 = zeros(hidden_layer_size, input_layer_size + 1);
 delta_2 = delta_3 * Theta2; %%size: 5000 x 26
 z2 = [ones(m, 1) z2];
 delta_2 = delta_2 .* sigmoidGradient(z2);
+delta_2 = delta_2(:,2:hidden_layer_size+1);
 Delta_1 = delta_2' * X;
-Theta1_grad = Delta_1./m;
+Theta1_grad = Delta_1./m; %%size: 25 x 401
 
 
 
@@ -111,23 +112,6 @@ Theta1_grad = Delta_1./m;
 %               the regularization separately and then add them to Theta1_grad
 %               and Theta2_grad from Part 2.
 %
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 % -------------------------------------------------------------
