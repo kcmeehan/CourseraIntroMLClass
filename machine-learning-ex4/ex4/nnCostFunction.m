@@ -115,6 +115,14 @@ Theta1_grad = Delta_1./m; %%size: 25 x 401
 
 
 % -------------------------------------------------------------
+RegGradTerm1 = zeros(size(Theta1_grad));
+RegGradTerm1(:, 2:input_layer_size) = lambda*Theta1_grad(:, 2:input_layer_size);
+Theta1_grad = Theta1_grad + RegGradTerm1;
+RegGradTerm2 = zeros(size(Theta2_grad));
+RegGradTerm2(:, 2:hidden_layer_size) = lambda*Theta2_grad(:, 2:hidden_layer_size);
+Theta2_grad = Theta2_grad + RegGradTerm2;
+
+
 
 % =========================================================================
 
