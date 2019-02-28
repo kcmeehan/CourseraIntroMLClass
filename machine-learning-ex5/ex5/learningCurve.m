@@ -52,12 +52,12 @@ error_val   = zeros(m, 1);
 %
 
 % ---------------------- Sample Solution ----------------------
-
-
-
-
-
-
+for i = 1:m
+	X_temp = X(1:i, :);
+	y_temp = y(1:i);
+  [theta] = trainLinearReg(X_temp, y_temp, lambda);
+	[error_train(i), grad] = linearRegCostFunction(X_temp, y_temp, theta, 0);
+	[error_val(i), grad] = linearRegCostFunction(Xval, yval, theta, 0);
 
 % -------------------------------------------------------------
 
