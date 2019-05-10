@@ -102,8 +102,6 @@ while ~isempty(email_contents)
 % word_indices is a list that will be the final output. It is a list of the indices of the str in the vocabList
 
 		for i =1:length(vocabList)
-      fprintf('%s ', str);
-      fprintf('%s ', vocabList{i});
 			if strcmp(str, vocabList{i}) == 1
 				word_indices = [word_indices; i];
 			  break;
