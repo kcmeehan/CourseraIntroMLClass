@@ -1,0 +1,14 @@
+Hi Alex,
+
+The coordinates of the center of each detector crystal are:
+
+[-17.875, 17.875, 0]
+[17.875,  17.875, 0]
+[- 17.875, - 17.875, 0]
+[ 17.875, - 17.875, 0]
+
+Where [0, 0, 0] is at the center of the four-crystal array.
+
+Cheers,
+
+Kathryn
