@@ -164,6 +164,7 @@ K = 100;
 X_rec  = recoverData(Z, U, K);
 
 % Display normalized data
+figure(1, 'position', [50, 50, 1000, 1000]);
 subplot(1, 2, 1);
 displayData(X_norm(1:100,:));
 title('Original faces');
